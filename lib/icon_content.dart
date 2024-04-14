@@ -1,38 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/widgets.dart';
 
+class icon_content extends StatelessWidget {
+  final IconData varIcon;
+  final String gender;
 
-const lableTextStyle = TextStyle(
-  fontSize: 18,
-  color: Color(0xFF797889),
-);
-
-const numberTextStyle = TextStyle(
-  fontSize: 50,
-  fontWeight: FontWeight.w900,
-);
-class iconContent extends StatelessWidget {
-
-  final IconData iconImg;
-  final String textVal;
-
-  iconContent(this.iconImg,this.textVal);
+  const icon_content(this.varIcon, this.gender);
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        FaIcon(
-          iconImg,
-          size: 80,
+        Center(
+          child: Icon(
+            varIcon,
+            size: 80,
+            color: Color.fromARGB(255, 150, 148, 169),
+          ),
         ),
         SizedBox(
           height: 15,
         ),
         Text(
-          textVal,
-          style: lableTextStyle,
-        ),
+          gender,
+          style: TextStyle(
+            fontSize: 18,
+            color: Color(0xFF797889),
+          ),
+        )
       ],
     );
   }

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton(this.icon, this.onPressed);
-  final IconData icon;
-  final Function() onPressed; // Use VoidCallback instead of custom type
+class MyIconButton extends StatelessWidget {
+  final IconData vIcon;
+  final Function() whenPressed;
+
+  const MyIconButton(this.vIcon, this.whenPressed);
+
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      child: Icon(icon),
-      onPressed: onPressed,
       shape: CircleBorder(),
       elevation: 6.0,
       fillColor: Color(0XFF4C4F5E),
@@ -16,6 +17,8 @@ class RoundIconButton extends StatelessWidget {
         width: 56.0,
         height: 56.0,
       ),
+      onPressed: whenPressed,
+      child: FaIcon(vIcon),
     );
   }
 }

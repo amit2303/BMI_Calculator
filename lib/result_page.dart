@@ -1,12 +1,13 @@
-import 'package:bmi_calculator/icon_content.dart';
-import 'package:bmi_calculator/input_page.dart';
-import 'package:bmi_calculator/reusable_card.dart';
+import 'input_page.dart';
 import 'package:flutter/material.dart';
-import 'calculator_brain.dart';
+import 'reusable_card.dart';
+import 'constants.dart';
 
 class result extends StatelessWidget {
-
-  result({required this.bmiResult,required this.resultText,required this.interpretation});
+  result(
+      {required this.bmiResult,
+      required this.resultText,
+      required this.interpretation});
   final String bmiResult;
   final String resultText;
   final String interpretation;
@@ -25,7 +26,11 @@ class result extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('BMI Calculator'),
+          title: Text(
+            'BMI Calculator',
+            style: lableTextStyle,
+          ),
+          backgroundColor: Color.fromARGB(255, 6, 4, 19),
         ),
         body: Column(
           children: [
@@ -34,7 +39,7 @@ class result extends StatelessWidget {
               style: numberTextStyle,
             ),
             Expanded(
-              child: ReusableCard(
+              child: reusableCard(
                 inactiveCardcolor,
                 Column(
                   children: [
@@ -60,7 +65,8 @@ class result extends StatelessWidget {
                             interpretation,
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontSize: 25,),
+                              fontSize: 25,
+                            ),
                           ),
                         ),
                       ),
